@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { fetchProducts } from "../Axios/axios";
+import { HiOutlineShoppingCart } from "react-icons/hi";
 
 
 
@@ -78,12 +79,14 @@ const Navbar = () => {
                 </form>
 
 
-                <div className="dropdown dropdown-end">
+                <div className="dropdown dropdown-end flex items-center gap-2">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                             <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
                         </div>
                     </div>
+
+                    <HiOutlineShoppingCart />
 
                     <ul
                         tabIndex={0}
