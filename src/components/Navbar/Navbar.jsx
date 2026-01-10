@@ -13,7 +13,7 @@ const navClass = ({ isActive }) => isActive ? "text-purple-600 font-semibold bg-
 const Navbar = () => {
     const [searchProduct, setSearchProduct] = useState("");
     // Handlling the search input 
-    const handleSubmit =async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         // console.log(searchProduct)
         // Searching   the products from the api 
@@ -53,7 +53,7 @@ const Navbar = () => {
 
                     <li>
                         <NavLink to="/products" className={navClass}>
-                            Category
+                            Products
                         </NavLink>
                     </li>
 
