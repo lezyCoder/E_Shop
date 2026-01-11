@@ -1,14 +1,9 @@
 import axios from "axios";
 
-export const fetchProducts = async (query = "") => {
+export const fetchProducts = async () => {
   const options = {
     method: "GET",
-    url: "https://api.freeapi.app/api/v1/public/randomproducts",
-    params: {
-      page: 1,
-      limit: 20,
-      query,
-    },
+    url: "https://dummyjson.com/products",
     headers: {
       accept: "application/json",
     },

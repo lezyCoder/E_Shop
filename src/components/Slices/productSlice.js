@@ -11,10 +11,10 @@ const initialState = {
 export const fetchItems = createAsyncThunk(
   "/products",
   // This function is payload data creator.
-  async (query) => {
-    const response = await fetchProducts(query);
-    console.log("response", response);
-    return response; // this is payload data
+  async () => {
+    const response = await fetchProducts();
+    console.log("response data", response);
+    return response.products; // this is payload data
   }
 );
 
