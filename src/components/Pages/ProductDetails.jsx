@@ -36,7 +36,7 @@ const ProductDetails = () => {
             <img
               src={product.thumbnail}
               alt={product.title}
-              className="max-w-full max-h-[600px] object-contain"
+              className="max-w-full max-h-150 object-contain"
             />
           </div>
 
