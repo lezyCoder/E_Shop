@@ -13,7 +13,7 @@ export const fetchItems = createAsyncThunk(
   // This function is payload data creator.
   async () => {
     const response = await fetchProducts();
-    console.log("response data", response);
+    // console.log("response data", response);
     return response.products; // this is payload data
   }
 );

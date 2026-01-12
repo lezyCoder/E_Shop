@@ -2,7 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addToCart } from "../Slices/cartSlice";
 import { MdOutlineStarOutline } from "react-icons/md";
+import { FaArrowRightLong } from "react-icons/fa6";
 import RatingCard from "../Cards/RatingCard";
+import Card from "../Cards/Card"
+
+
 const ProductDetails = () => {
   // taking id from the  url (return string)
   const { id } = useParams();
@@ -21,6 +25,19 @@ const ProductDetails = () => {
   // console.log("id from URL:", id, typeof id);
   // console.log("items:", items);
   // console.log("product:", product);
+
+  // Random index for the similar Prodcuts 
+  const startIndex =
+    items.length > 4
+      ? Math.floor(Math.random() * (items.length - 4))
+      : 0;
+
+  const randomNumber = Math.floor(Math.random() * startIndex);
+  // console.log("random", randomNumber)
+  const similarProducts = items
+    .filter((product) => product.id !== Number(id)) // here id is we get from the params.
+    .slice(randomNumber, randomNumber + 4);// +4  because we are showing 4 cards 
+
 
   if (!product) return null;
 
@@ -68,6 +85,20 @@ const ProductDetails = () => {
           </div>
         </div>
       )}
+
+      {/* Similar Product sections */}
+      <section className="similar-product border border-gray-700 rounded mt-2 p-6 ">
+
+        <div className="header flex justify-between items-center text-purple-400">
+          <h1 className="font-thin  leading-relaxed  text-2xl "> Our Products </h1>
+          <FaArrowRightLong />
+        </div>
+        <div className="cards grid grid-cols-4 gap-2 mt-10 border p-2 border-gray-700 rounded ">
+          {similarProducts.map((item) => (
+            <Card key={item.id} item={item} />
+          ))}
+        </div>
+      </section>
     </>
   );
 };

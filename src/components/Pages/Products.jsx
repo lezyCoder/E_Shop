@@ -10,7 +10,7 @@ const Products = () => {
   // retrving the items loading and error from the product state
   const { items, isloading, error } = useSelector((state) => state.product) // product -> coming from the store (i.e. reducer)
 
-  console.log("items", items)
+  // console.log("items", items)
   const dispatch = useDispatch();
 
   useEffect(() => {
