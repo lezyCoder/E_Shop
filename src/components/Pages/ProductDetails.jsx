@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addToCart } from "../Slices/cartSlice";
 import { MdOutlineStarOutline } from "react-icons/md";
+import RatingCard from "../Cards/RatingCard";
 const ProductDetails = () => {
   // taking id from the  url (return string)
   const { id } = useParams();
@@ -20,6 +21,8 @@ const ProductDetails = () => {
   // console.log("id from URL:", id, typeof id);
   // console.log("items:", items);
   // console.log("product:", product);
+
+  if (!product) return null;
 
   return (
     <>
@@ -60,6 +63,8 @@ const ProductDetails = () => {
             </button>
 
             {/* Rating information here  */}
+
+            <RatingCard rating={product.rating} reviews={product.reviews} />
           </div>
         </div>
       )}

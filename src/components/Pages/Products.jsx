@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import Card from "../ProductCard/Card"
+import Card from "../Cards/Card"
 
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
