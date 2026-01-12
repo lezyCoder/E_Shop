@@ -1,12 +1,12 @@
-import { Routes, Route } from "react-router-dom"
-import Navbar from "./components/Navbar/Navbar"
-import Home from "./Home"
-import Footer from "./components/Footer/Footer"
-import Layout from "./components/Layout/Layout"
-import Products from "./components/Pages/Products"
-import Contact from "./components/Pages/Contact"
-import About from "./components/Pages/About"
-
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./Home";
+import Footer from "./components/Footer/Footer";
+import Layout from "./components/Layout/Layout";
+import Products from "./components/Pages/Products";
+import Contact from "./components/Pages/Contact";
+import About from "./components/Pages/About";
+import ProductDetails from "./components/Pages/ProductDetails";
 
 const App = () => {
   return (
@@ -18,11 +18,12 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
       </Layout>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
