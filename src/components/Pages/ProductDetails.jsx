@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addToCart } from "../Slices/cartSlice";
-
+import { MdOutlineStarOutline } from "react-icons/md";
 const ProductDetails = () => {
   // taking id from the  url (return string)
   const { id } = useParams();
@@ -48,8 +48,8 @@ const ProductDetails = () => {
                 ${product.price}
               </p>
               <p className="text-gray-600">{product.description}</p>
-              <p className="text-lg font-thin text-purple-600">
-                Rating : {product.rating}
+              <p className="text-lg font-thin text-purple-600 flex items-center gap-2 bg-amber-300 w-16 text-center rounded px-1">
+                {product.rating}<MdOutlineStarOutline />
               </p>
             </div>
 
@@ -58,6 +58,8 @@ const ProductDetails = () => {
               onClick={() => dispatch(addToCart(product))}>
               Add to cart
             </button>
+
+            {/* Rating information here  */}
           </div>
         </div>
       )}
