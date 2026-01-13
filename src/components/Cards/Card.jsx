@@ -1,8 +1,8 @@
 import { IoMdArrowForward } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-const Card = ({ item }) => {
+const Card = ({ item, key }) => {
   const { title, price, images, thumbnail, id } = item;
- 
+
   const navigate = useNavigate();
 
   const handleForward = (id) => {
@@ -13,7 +13,7 @@ const Card = ({ item }) => {
   return (
     <div
       className="group border w-full flex items-center flex-col relative cursor-pointer overflow-hidden bg-yellow-50"
-      key={item.id}>
+      key={key}>
       <div className="w-full flex justify-center h-70  p-1 transition-opacity duration-300 group-hover:opacity-30">
         <img src={thumbnail} alt={title} />
       </div>
