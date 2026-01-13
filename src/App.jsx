@@ -9,12 +9,24 @@ import About from "./components/Pages/About";
 import ProductDetails from "./components/Pages/ProductDetails";
 import Cart from "./components/Pages/Cart";
 import Checkout from "./components/Pages/Checkout";
+import Login from "./components/Auth/Login";
+import Registration from "./components/Auth/Registration"
+import AuthLayout from "./components/Layout/AuthLayout";
+import MainLayout from "./components/Layout/MainLayout";
+
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Layout>
-        <Routes>
+      <Routes>
+        {/* Auth pages (NO Navbar/Footer) */}
+        <Route element={<AuthLayout />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/registration" element={<Registration />} />
+        </Route>
+        <Route element={<MainLayout />}>
+          {/* <Layout> */}
+
+          <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
@@ -22,9 +34,9 @@ const App = () => {
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-      </Layout>
-      <Footer />
+        </Route>
+        {/* </Layout> */}
+      </Routes >
     </>
   );
 };
