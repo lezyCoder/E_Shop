@@ -1,11 +1,11 @@
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
-import { removeFromCart } from "../Slices/cartSlice";
+import { removeFromCart, increaseQuantity, decreaseQuantity } from "../Slices/cartSlice";
 import { useDispatch } from "react-redux";
 
 const CartCard = ({ cart }) => {
-const dispatch = useDispatch();
-    console.log("cart",cart)
-    const { thumbnail, title, rating, price, quantity,id } = cart;
+    const dispatch = useDispatch();
+    console.log("cart", cart)
+    const { thumbnail, title, rating, price, quantity, id } = cart;
 
     return (
         <div className="space-y-4">
@@ -30,7 +30,7 @@ const dispatch = useDispatch();
                     <div className="actions-btns flex gap-2">
                         <button className="w-fit text-sm text-gray-600 hover:underline">Save for later </button>
                         <button className="w-fit text-sm text-gray-600 hover:underline">Move to wishlist</button>
-                        <button className="w-fit text-sm text-red-300 hover:underline" onClick={()=>dispatch(removeFromCart(id))}>
+                        <button className="w-fit text-sm text-red-300 hover:underline" onClick={() => dispatch(removeFromCart(id))}>
                             Remove
                         </button>
                     </div>
@@ -38,13 +38,13 @@ const dispatch = useDispatch();
 
                 {/* Quantity */}
                 <div className="col-span-1 flex items-center justify-center gap-3 text-2xl text-purple-600">
-                    <button className="hover:scale-110 transition">
+                    <button className="hover:scale-110 transition" onClick={() => dispatch(decreaseQuantity({ id, data: "decrease" }))}>
                         <CiCircleMinus />
                     </button>
 
                     <span className="text-xl font-medium text-white">{quantity}</span>
 
-                    <button className="hover:scale-110 transition">
+                    <button className="hover:scale-110 transition" onClick={() => dispatch(increaseQuantity({ id, data: "increase" }))}>
                         <CiCirclePlus />
                     </button>
                 </div>
