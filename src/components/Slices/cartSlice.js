@@ -20,12 +20,12 @@ export const cartSlice = createSlice({
         state.push({ ...action.payload, quantity: 1 }); // otherwise give it a count 1.
       }
     },
-    deleteFromCart: (state, action) => {
+    removeFromCart: (state, action) => {
       // here we will check the id and filter the element.
-      return state.filter((product) => product.id !== action.payload.id);
+      return state.filter((product) => product.id !== action.payload);
     },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart , removeFromCart } = cartSlice.actions;
 export default cartSlice.reducer;

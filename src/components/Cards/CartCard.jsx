@@ -1,9 +1,11 @@
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
+import { removeFromCart } from "../Slices/cartSlice";
+import { useDispatch } from "react-redux";
 
 const CartCard = ({ cart }) => {
-
-    console.log("card", typeof cart[0])
-    const { thumbnail, title, rating, price, quantity } = cart;
+const dispatch = useDispatch();
+    console.log("cart",cart)
+    const { thumbnail, title, rating, price, quantity,id } = cart;
 
     return (
         <div className="space-y-4">
@@ -28,7 +30,7 @@ const CartCard = ({ cart }) => {
                     <div className="actions-btns flex gap-2">
                         <button className="w-fit text-sm text-gray-600 hover:underline">Save for later </button>
                         <button className="w-fit text-sm text-gray-600 hover:underline">Move to wishlist</button>
-                        <button className="w-fit text-sm text-red-300 hover:underline">
+                        <button className="w-fit text-sm text-red-300 hover:underline" onClick={()=>dispatch(removeFromCart(id))}>
                             Remove
                         </button>
                     </div>

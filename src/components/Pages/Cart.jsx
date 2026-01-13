@@ -1,13 +1,14 @@
-import { useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import CartCard from "../Cards/CartCard";
 import { useMemo } from "react";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart);
+  
   // console.log("Cart", cartItems)
 
-  const shippingPrice = 5;
-  const platformFee = 2;
+  const shippingPrice =  cartItems.length > 0 ? 5 : 0 ;
+  const platformFee = cartItems.length > 0 ? 2 : 0;
 
   const Itemstotal = useMemo(
     () => cartItems.map((cart) => cart.price * cart.quantity),
