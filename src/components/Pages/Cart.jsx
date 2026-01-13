@@ -1,13 +1,14 @@
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import CartCard from "../Cards/CartCard";
 import { useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart);
-  
+  const navigate = useNavigate()
   // console.log("Cart", cartItems)
 
-  const shippingPrice =  cartItems.length > 0 ? 5 : 0 ;
+  const shippingPrice = cartItems.length > 0 ? 5 : 0;
   const platformFee = cartItems.length > 0 ? 2 : 0;
 
   const Itemstotal = useMemo(
@@ -20,8 +21,8 @@ const Cart = () => {
     () =>
       Math.ceil(
         Itemstotal.reduce((acc, current) => acc + current, 0) +
-          shippingPrice +
-          platformFee
+        shippingPrice +
+        platformFee
       ),
     [cartItems]
   );
@@ -76,7 +77,7 @@ const Cart = () => {
                 <p className="font-bold">${finalPrice}</p>
               </div>
             </div>
-            <button className="w-full text-sm p-2 bg-purple-500 hover:bg-purple-600 cursor-pointer ">
+            <button className="w-full text-sm p-2 bg-purple-500 hover:bg-purple-600 cursor-pointer " onClick={()=>navigate('/checkout')}>
               Checkout
             </button>
           </div>
