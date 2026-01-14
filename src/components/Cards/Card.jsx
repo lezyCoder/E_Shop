@@ -6,7 +6,7 @@ const Card = ({ item, key }) => {
   const navigate = useNavigate();
 
   const handleForward = (id) => {
-    console.log("id", id);
+    // console.log("id", id);
     navigate(`/product/${id}`);
   };
 
