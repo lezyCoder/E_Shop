@@ -1,31 +1,75 @@
 const Contact = () => {
   return (
-    <div className="flex flex-col gap-8">
-      <div>
-        <h1 className="text-5xl text-center text-purple-400 mb-2">Contact</h1>
+    <div className="min-h-screen bg-base-100">
+      {/* Header */}
+      <div className="text-center py-12">
+        <h1 className="text-5xl font-bold text-purple-400 mb-3">Contact Us</h1>
+        <p className="text-base-content/70">
+          We'd love to hear from you. Please fill out the form below.
+        </p>
       </div>
-      <div className="hero ">
+
+      {/* Hero Section */}
+      <div className="hero">
         <div className="hero-content flex-col gap-14 lg:flex-row-reverse">
+          {/* Text / Info */}
           <div className="text-center lg:text-left max-w-lg">
-            <h1 className="text-5xl font-bold">Contact Us </h1>
-            <p className="py-6 text-wrap">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+            <h2 className="text-4xl font-semibold mb-4">Get in Touch</h2>
+            <p className="mb-6 text-base-content/70">
+              Have questions, feedback, or need support? Our team is here to
+              help you every step of the way.
             </p>
-          </div>
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <div className="card-body">
-              <fieldset className="fieldset">
-                <label className="label">Name</label>
-                <input type="email" className="input" placeholder="Name" />
-                <label className="label">Email</label>
-                <input type="email" className="input" placeholder="Email" />
-                <label className="label">Message</label>
-                <textarea className="textarea" placeholder="Message"></textarea>
-                <button className="btn btn-neutral mt-4">Contact </button>
-              </fieldset>
+
+            <div className="space-y-2 text-sm">
+              <p>📧 Email: support@yourstore.com</p>
+              <p>📞 Phone: +1 234 567 890</p>
+              <p>📍 Location: Remote / Worldwide</p>
             </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="card bg-base-200 w-full max-w-sm shadow-2xl">
+            <form className="card-body">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Email</span>
+                </label>
+                <input
+                  type="email"
+                  placeholder="you@example.com"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Message</span>
+                </label>
+                <textarea
+                  className="textarea textarea-bordered"
+                  placeholder="Write your message..."
+                  required></textarea>
+              </div>
+
+              <div className="form-control mt-6">
+                <button className="btn bg-purple-500 hover:bg-purple-600">
+                  Send Message
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

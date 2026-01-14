@@ -20,8 +20,8 @@ const Products = () => {
 
   return (
     <div className="w-full flex flex-col gap-8 ">
-      <div>
-        <h1 className="text-5xl text-center text-purple-400">Products </h1>
+      <div className="text-center ">
+        <h1 className="text-5xl font-bold text-purple-400 mb-3">Products</h1>
       </div>
       <div className="products-container p-8">
         {isloading && (
