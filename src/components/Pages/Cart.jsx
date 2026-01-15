@@ -34,18 +34,31 @@ const Cart = () => {
           </div>
 
           {/* Summary */}
-          <div className="col-span-1 border max-h-80 border-gray-700 rounded flex flex-col justify-between gap-4 p-6 shadow-sm md:sticky md:top-6">
+          <div
+            className="
+  w-full
+  md:col-span-1
+  border border-gray-700
+  rounded
+  flex flex-col
+  justify-between
+  gap-6
+  p-4 md:p-6
+  shadow-sm
+  md:sticky md:top-6
+">
             {/* Coupon */}
             <div className="coupon flex flex-col gap-2">
-              <label className="text-gray-600">Enter Promo Code</label>
-              <div className="flex gap-3">
+              <label className="text-gray-500 text-sm">Enter Promo Code</label>
+
+              <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="text"
                   placeholder="Promo code"
-                  className="flex-1 p-2 border border-gray-600 outline-none"
+                  className="flex-1 p-2 border border-gray-600 outline-none text-sm"
                 />
                 <button
-                  className="p-2 bg-purple-500 w-24 text-white cursor-not-allowed opacity-60"
+                  className="p-2 bg-purple-500 sm:w-24 text-white cursor-not-allowed opacity-60"
                   disabled>
                   Apply
                 </button>
@@ -54,9 +67,11 @@ const Cart = () => {
 
             {/* Order Summary */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Order Summary</h3>
+              <h3 className="text-base md:text-lg font-semibold mb-4">
+                Order Summary
+              </h3>
 
-              <div className="space-y-2 text-gray-300 font-thin">
+              <div className="space-y-2 text-gray-300 text-sm">
                 <div className="flex justify-between">
                   <p>Shipping cost</p>
                   <p>${shippingPrice}</p>
@@ -67,14 +82,14 @@ const Cart = () => {
                   <p>${platformFee}</p>
                 </div>
 
-                <div className="flex justify-between font-bold">
+                <div className="flex justify-between font-bold text-white pt-2 border-t border-gray-700">
                   <p>Total</p>
                   <p>${finalPrice}</p>
                 </div>
               </div>
 
               <button
-                className="w-full mt-4 text-sm p-2 bg-purple-500 hover:bg-purple-600 disabled:opacity-50"
+                className="w-full mt-4 text-sm p-2 bg-purple-500 hover:bg-purple-600 transition disabled:opacity-50"
                 disabled={!hasItems}
                 onClick={() => navigate("/checkout")}>
                 Checkout
