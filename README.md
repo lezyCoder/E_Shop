@@ -4,7 +4,7 @@ A fully functional e-commerce application built with React and Redux Toolkit, fe
 
 ## 🌐 Live Demo
 
-[View Live App](https://e-shop-phi-rosy.vercel.app/products)
+[View Live App]https://e-shop-hv9ueyush-lezycoders-projects.vercel.app/
 
 ## ✨ Features
 
